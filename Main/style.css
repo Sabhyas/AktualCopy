@@ -303,3 +303,32 @@ main {
     gap: 10px;
   }
 }
+
+.button {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-button {
+  background-color: rebeccapurple;
+}
+
+.login-button:hover {
+  background-color: #b1003a;
+}
+
+.register-button {
+  background-color: rebeccapurple;
+}
+
+.register-button:hover {
+  background-color: #b1003a;
+}

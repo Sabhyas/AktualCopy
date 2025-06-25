@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class = "front">
+        <form class="form" action="">
+          <div class="row">
+              <label class="form__label">ელ.ფოსტა<span class="form__tooltip" data-tooltip="Please enter your email address"></span></label>
+              </div>
+           <div class="row"> 
+              <input class="form__text" type="email" id="email">
+            </div>
+          <div class="row">
+              <label class="form__label">პაროლი<span class="form__tooltip" data-tooltip="Minimum 12 characters, at least one capital and one number"></span></label>
+            <p id="password-strength"></p>
+            </div>
+          
+          <div class="row">
+              <input class="form__text" type="password" id="password">
+            </div>
+          <div class="row">
+              <label class="form__label">გაიმეორეთ პაროლი</label>
+          </div>
+          <div class="row">
+              <input class="form__text" type="password" id="password-reenter">
+          </div>
+             <div class="row">
+              <label class="form__label">მომხმარებლის სახელი<span class="form__tooltip"></span></label>
+              </div>
+           <div class="row"> 
+              <input class="form__text" type="text" id="email">
+                
+            </div>
+                 <div class="row">
+              <label class="form__label">ქვეყანა<span class="form__tooltip"></span></label>
+              </div>
+           <div class="row"> 
+              <input class="form__text" type="text" id="email">
+            </div>
+             <div class="row">
+              <label class="form__label">ტელეფონის ნომერი<span class="form__tooltip"></span></label>
+              </div>
+           <div class="row"> 
+              <input class="form__text" type="number" id="email">
+            </div>
+           <div class="row fineprint">
+                <input class="form__checkbox" type="checkbox" id="agreement" name="agreement">
+                <label class = "" for="agreement">I am 13 years of age or older AND agree to the <a href="#">terms and serivces</a>.</label>
+           </div>
+           <div class="row">
+                <img class="recaptcha" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/recaptcha-dark.png" alt="">
+           </div>
+          <div class="row">
+              <button class="button">რეგისტრაცია!</button>
+          <a href="Login.html" class="fineprint">მე უკვე მაქვს ანგარიში</a>  
+          </div>
+            </form>
+        </div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.getElementById("password");
+  const strengthText = document.getElementById("password-strength");
+
+  passwordInput.addEventListener("input", () => {
+    const password = passwordInput.value;
+
+    const hasLowercase = /[a-z]/.test(password);
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasNumbers = /[0-9]/.test(password);
+
+    if (password.length === 0) {
+      strengthText.textContent = "";
+      strengthText.style.color = "";
+    } else if (hasLowercase && !hasUppercase && !hasNumbers) {
+      strengthText.textContent = "🔴 სუსტი პაროლი";
+      strengthText.style.color = "crimson";
+    } else if ((hasLowercase || hasUppercase) && hasNumbers && !(hasLowercase && hasUppercase)) {
+      strengthText.textContent = "🟡 საშუალო პაროლი";
+      strengthText.style.color = "orange";
+    } else if (hasLowercase && hasUppercase && hasNumbers) {
+      strengthText.textContent = "🟢 ძლიერი პაროლი";
+      strengthText.style.color = "green";
+    } else {
+      strengthText.textContent = "🟡 საშუალო პაროლი";
+      strengthText.style.color = "orange";
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
