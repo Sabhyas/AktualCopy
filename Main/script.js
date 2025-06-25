@@ -62,3 +62,10 @@ dislikebutton.onclick = () => {
   dislikecount.textContent = parseInt(dislikecount.textContent) + 1;
   reacted = true;
 };
+
+const seeMoreBtn = document.getElementById("seeMoreBtn")
+const invisible = document.querySelector(".extra-images")
+
+seeMoreBtn.onclick = function() {
+  document.querySelector(".extra-images").style.display = 'block';
+}
